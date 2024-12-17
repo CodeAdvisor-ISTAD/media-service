@@ -25,6 +25,7 @@ spring:
       max-file-size: 10MB
       max-request-size: 10MB
 
-media.url: http://localhost:8100/api/v1/files/preview
+media:
+  url: http://34.101.39.118:8100/api/v1/files/preview
 
 
