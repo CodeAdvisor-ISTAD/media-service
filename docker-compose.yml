@@ -5,7 +5,7 @@ services:
     build:
       context: . # Use the current directory for building
     ports:
-      - "8080:8080" # Map the application port
+      - "8090:8080" # Map the application port
 #    environment:
 #      SPRING_PROFILES_ACTIVE: prod # Set Spring profile if needed
     volumes:
