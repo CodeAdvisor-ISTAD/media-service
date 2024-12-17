@@ -14,9 +14,9 @@ spring:
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/media
-    username: postgres
-    password: 123456
+    url: jdbc:postgresql://34.101.39.118:5430/assets
+    username: admin
+    password: Code@Advisors2024
   jpa:
     hibernate:
       ddl-auto: update
@@ -26,3 +26,5 @@ spring:
       max-request-size: 10MB
 
 media.url: http://localhost:8100/api/v1/files/preview
+
+
