@@ -5,7 +5,7 @@ server:
 
 minio:
   server:
-    url: http://34.101.39.118:5430
+    url: http://34.50.73.18:5430
     access-key: minioadmin
     secret-key: minioadmin123
     bucket-name: files
@@ -14,7 +14,7 @@ spring:
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://34.101.39.118:5430/assets
+    url: jdbc:postgresql://34.50.73.18:5430/assets
     username: admin
     password: Code@Advisors2024
   jpa:
