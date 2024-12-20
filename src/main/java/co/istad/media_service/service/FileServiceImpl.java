@@ -5,6 +5,7 @@ import co.istad.media_service.dto.FileResponse;
 import co.istad.media_service.repository.FileRepository;
 import io.minio.*;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Stream;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class FileServiceImpl implements FileService {
@@ -95,13 +97,15 @@ public class FileServiceImpl implements FileService {
 //            throw new Exception("Invalid file type. Only JPG, PNG, and JPEG are allowed.");
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid file type. Only JPG, PNG, and JPEG are allowed.");
         }
+        fileName = fileName.trim();
+        log.info("Uploading file: {}", fileName);
 
         // Extract file name without extension and the file extension
         String baseName = fileName.substring(0, fileName.lastIndexOf('.'));
         String fileExtension = fileName.substring(fileName.lastIndexOf('.'));
 
         // Generate a new file name with the current date and time
-        String newFileName = baseName.trim() + "_" + LocalDateTime.now().toString().replace(":", "-") + fileExtension;
+        String newFileName = baseName+ "_" + LocalDateTime.now().toString().replace(":", "-") + fileExtension;
 
         // Ensure bucket exists
         boolean bucketExists = minioClient.bucketExists(BucketExistsArgs.builder().bucket(minioBucketName).build());
