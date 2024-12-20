@@ -5,7 +5,7 @@ server:
 
 minio:
   server:
-    url: http://34.50.73.18:5430
+    url: http://34.50.73.18:27019
     access-key: minioadmin
     secret-key: minioadmin123
     bucket-name: files
