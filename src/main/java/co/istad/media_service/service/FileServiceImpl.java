@@ -92,7 +92,8 @@ public class FileServiceImpl implements FileService {
     public Map<String, String> uploadFile(MultipartFile file) throws Exception {
         String fileName = file.getOriginalFilename();
         if (fileName == null || !isValidFileExtension(fileName)) {
-            throw new Exception("Invalid file type. Only JPG, PNG, and JPEG are allowed.");
+//            throw new Exception("Invalid file type. Only JPG, PNG, and JPEG are allowed.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid file type. Only JPG, PNG, and JPEG are allowed.");
         }
 
         // Extract file name without extension and the file extension
