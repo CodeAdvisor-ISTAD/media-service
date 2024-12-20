@@ -101,7 +101,7 @@ public class FileServiceImpl implements FileService {
         String fileExtension = fileName.substring(fileName.lastIndexOf('.'));
 
         // Generate a new file name with the current date and time
-        String newFileName = baseName + "_" + LocalDateTime.now().toString().replace(":", "-") + fileExtension;
+        String newFileName = baseName.trim() + "_" + LocalDateTime.now().toString().replace(":", "-") + fileExtension;
 
         // Ensure bucket exists
         boolean bucketExists = minioClient.bucketExists(BucketExistsArgs.builder().bucket(minioBucketName).build());
@@ -115,7 +115,7 @@ public class FileServiceImpl implements FileService {
         minioClient.putObject(
                 PutObjectArgs.builder()
                         .bucket(minioBucketName)
-                        .object(newFileName.trim()) // Use the new file name
+                        .object(newFileName) // Use the new file name
                         .stream(fileStream, file.getSize(), -1)
                         .build()
         );
