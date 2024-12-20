@@ -26,6 +26,6 @@ spring:
       max-request-size: 10MB
 
 media:
-  url: http://34.50.73.18:27019/api/v1/files/preview
+  url: http://167.172.78.79:8090/api/v1/files/preview
 
 
