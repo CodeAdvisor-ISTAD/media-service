@@ -115,7 +115,7 @@ public class FileServiceImpl implements FileService {
         minioClient.putObject(
                 PutObjectArgs.builder()
                         .bucket(minioBucketName)
-                        .object(newFileName) // Use the new file name
+                        .object(newFileName.trim()) // Use the new file name
                         .stream(fileStream, file.getSize(), -1)
                         .build()
         );
