@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.stream.Stream;
 
 @Slf4j
@@ -101,7 +102,8 @@ public class FileServiceImpl implements FileService {
         log.info("Uploading file: {}", fileName);
 
         // Extract file name without extension and the file extension
-        String baseName = fileName.substring(0, fileName.lastIndexOf('.'));
+//        String baseName = fileName.substring(0, fileName.lastIndexOf('.'));
+        String baseName = UUID.randomUUID().toString();
         String fileExtension = fileName.substring(fileName.lastIndexOf('.'));
 
         // Generate a new file name with the current date and time
