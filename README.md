@@ -8,7 +8,7 @@
 ## Overview 🌐
 The **Media Service** is a crucial component of the **CodeAdvisors** platform, designed to handle media file management, including file uploads, retrieval, and deletion. It supports handling multiple file uploads at once and provides a way to preview images, stream content, and manage file storage.
 
-The service interacts with **MinIO** for file storage and uses **PostgreSQL** for persisting metadata.
+The service interacts with **MinIO** for file storage and uses **PostgresSQL** for persisting metadata.
 
 ## Technologies Used ⚙️
 - **Spring Boot**: Microservice framework for building RESTful APIs.

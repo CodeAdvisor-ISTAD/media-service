@@ -1,31 +1,13 @@
 spring.application.name: media-service
 
-server:
-  port: 8090
-
-minio:
-  server:
-    url: http://167.172.78.79:27018
-    access-key: minioadmin
-    secret-key: minioadmin123
-    bucket-name: files
 
 spring:
+  profiles:
+    active: prod
+  config:
+    import: "configserver:"
 
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://34.50.73.18:5430/assets
-    username: admin
-    password: Code@Advisors2024
-  jpa:
-    hibernate:
-      ddl-auto: update
-  servlet:
-    multipart:
-      max-file-size: 10MB
-      max-request-size: 10MB
-
-media:
-  url: http://167.172.78.79:8090/api/v1/files/preview
-
+  cloud:
+    config:
+      uri: http://167.172.78.79:8888
 
