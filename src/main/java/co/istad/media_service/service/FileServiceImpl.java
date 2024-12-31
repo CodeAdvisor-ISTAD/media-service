@@ -137,7 +137,8 @@ public class FileServiceImpl implements FileService {
 
         return Map.of(
                 "success", "File uploaded successfully",
-                "file_name", newFileName
+                "file_name", newFileName,
+                "file_url", newFile.getFileUrl()
         );
     }
 
